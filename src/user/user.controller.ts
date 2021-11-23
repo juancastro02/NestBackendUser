@@ -9,7 +9,7 @@ export class UserController {
         private userService: UserService
     ){}
 
-    @Post('/')
+    @Post('/create')
     async createUser(@Res() res, @Body() UserDataDTO: UserDTO ){
        const user = await this.userService.createUser(UserDataDTO)
        return res.status(HttpStatus.OK).json({
